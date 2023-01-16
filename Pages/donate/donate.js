@@ -80,7 +80,7 @@ function firstFormFunction() {
     return;
   }
   if (!validators.isValidEmail(emailInput.value)) {
-    alert("Por favor, insira um meail válido ");
+    alert("Por favor, insira um email válido ");
     return;
   }
 
