@@ -1,0 +1,38 @@
+.db-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-top: 4px solid var(--color-secondary);
+  border-bottom: 4px solid var(--color-secondary);
+}
+.db-section > article {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 75%;
+}
+.db-section .section-title {
+  padding: 2rem 0rem;
+  font-size: 4rem;
+  display: flex;
+  gap: 1rem;
+  align-self: center;
+  align-items: center;
+}
+.section-title > span {
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 10px;
+  border-radius: 3rem;
+}
+@media (max-width: 800px) {
+  .db-section .section-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .db-section .section-title {
+    font-size: 1.5rem;
+  }
+}

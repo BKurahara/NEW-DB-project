@@ -1,0 +1,59 @@
+.blue-btn {
+  box-shadow: 10px 0 var(--color-primary) inset;
+  border-radius: 30px;
+  margin: 15px;
+  padding: 20px;
+  background-color: var(--color-primary-dark);
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.blue-btn:hover {
+  box-shadow: none;
+  background: var(--color-secondary);
+  cursor: pointer;
+}
+
+.accordion-btn {
+  width: 100%;
+  background-color: var(--color-primary-dark);
+  border-radius: 4rem;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.icon-circle-button {
+  width: 150px;
+  height: 150px;
+  font-size: 4rem;
+  border: 7px solid var(--color-primary-dark);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.icon-circle-button:hover {
+  color: var(--color-secondary);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary);
+}
+
+#scroll-btn {
+  position: fixed;
+  z-index: 2;
+  top: 90%;
+  left: 95%;
+  background-color: var(--color-primary-dark);
+  border: 5px solid var(--color-secondary);
+  border-radius: 50%;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+}
+@media (max-width: 800px) {
+  #scroll-btn {
+    display: none;
+  }
+}

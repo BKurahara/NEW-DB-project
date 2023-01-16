@@ -1,0 +1,140 @@
+.db-main {
+  width: 100vw;
+  z-index: 0;
+}
+
+/* Vídeo greetings */
+.greetings-wrapper {
+  position: relative;
+}
+.greetings-wrapper > h1 {
+  color: var(--color-text);
+  position: absolute;
+  font-size: 4rem;
+  width: 100vw;
+  text-align: center;
+  top: 50%;
+  left: 0%;
+  z-index: 1;
+  background-color: var(--color-primary);
+}
+.greetings-wrapper > h1 > span {
+  color: var(--color-secondary);
+}
+.video-background {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 600px;
+}
+
+/* Primeira sessão */
+.db-section {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text);
+}
+
+.db-section > .db-cards-container > .db-card {
+  width: 25%;
+}
+
+.db-section > article > p {
+  padding: 2rem 0;
+}
+
+.db-section > article > .db-cards-container {
+  padding: 2rem 0rem 6rem 0rem;
+}
+.db-section > article > .db-cards-container {
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.db-section > article > .db-cards-container > .db-card {
+  background-color: var(--color-primary-light);
+  width: 200px;
+  border-radius: 15px;
+  margin: 1rem 0;
+}
+.db-section > article > .db-cards-container > .db-card > img {
+  width: 100%;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 15px 15px 0 0;
+}
+.db-section > article > .db-cards-container > .db-card > h3 {
+  font-size: 2.2rem;
+  padding-top: 1rem;
+}
+
+.db-section > article > .db-cards-container > .db-card > p {
+  padding: 0.5rem 0 1rem;
+}
+
+/* Segunda sessão */
+
+/* Acordions*/
+.db-section > article > .image-contender {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.db-section > article > .image-contender > .contender > h4 {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+.db-section > article > .image-contender > .contender > .accordion {
+  padding: 1rem 0;
+}
+.db-section > article > .image-contender > .contender {
+  width: 70%;
+}
+.db-section > article > .image-contender > .img-fish > .acara {
+  max-width: 70%;
+  object-fit: cover;
+}
+/*Circle card */
+.db-section {
+  border-bottom: 5px solid var(--color-primary-dark);
+}
+.db-section > article > .circle-cards-contender {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex-wrap: wrap;
+}
+.db-section > article > .circle-cards-contender > .circle-card {
+  width: 200px;
+  margin: 1rem 0;
+}
+
+.db-section > article > .circle-cards-contender > .circle-card > h5 {
+  font-size: 1.5rem;
+  padding: 1.5rem 0 1rem 0;
+}
+
+@media (max-width: 800px) {
+  .db-section > article > .db-cards-container > .db-card {
+    width: 150px;
+  }
+  .db-section > article > .image-contender {
+    flex-wrap: wrap;
+  }
+  .img-fish {
+    display: none;
+  }
+  .contender {
+    margin: 0 auto;
+  }
+  .db-section > article > .image-contender > .contender > h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .db-section > article > .db-cards-container > .db-card {
+    width: 100%;
+  }
+}

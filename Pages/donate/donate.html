@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Settings-->
+  <link rel="stylesheet" href="/Styles/settings/colors.css">
+
+  <!-- Generic -->
+  <link rel="stylesheet" href="/Styles/generic/reset.css">
+
+  <!-- Elements -->
+  <link rel="stylesheet" href="/Styles/Elements/buttons.css">
+  <!-- Components -->
+  <link rel="stylesheet" href="/Styles/components/header.css">
+  <link rel="stylesheet" href="/Styles/components/db-section.css">
+  <link rel="stylesheet" href="/Styles/components/btn-types.css">
+  <link rel="stylesheet" href="/Styles/components/db-footer.css">
+  <link rel="stylesheet" href="/Styles/settings/map.css">
+  <link rel="stylesheet" href="/Styles/components/menu-active.css">
+  <!-- Pages -->
+  <link rel="stylesheet" href="/Pages//donate/donate.css">
+  <!-- Trumps-->
+  <link rel="stylesheet" href="/Styles/trumps/closed.css">
+  <link rel="stylesheet" href="/Styles/trumps/alternative-color.css">
+
+  <title>Document</title>
+  <!-- Javascript-->
+  <script src="/Js/menu-active.js" defer></script>
+  <script src="/Pages/donate/donate.js" defer></script>
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header-content">
+    <button class="header-menu-btn" onclick=" menuActive()">Home</button>
+    <button class="header-menu-icon" onclick=" menuActive()"><i class="fa-solid fa-bars"></i></button>
+    <img class="header-logo" src="/Assets/img/logo-3.svg" alt="Logo-DB">
+    <p>Sua doação é importante para nós!</p>
+    <div class="menu-container closed">
+      <ul>
+        <li><a href="@">Nossa empresa</a></li>
+        <li><a href="@">Nossa história</a></li>
+        <li><a href="@">Galeria</a></li>
+        <li><a href="@">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="donate-main">
+
+
+    <section class="db-section" id="first-section">
+      <div class="img-container">
+        <div class="image">
+          <img src="/Assets/img/Tropheus.png " alt=" Peixe ciclídeo africano">
+        </div>
+
+        <div class="container">
+          <form class="donate-form">
+            <h1 class="title">Sua doação irá mudar vidas! <span>Passo 1 de 2</span></h1>
+
+            <label for="name">Nome *</label>
+            <input class="box" type="text" required id="name">
+            <label for="email">Email *</label>
+            <input class="box" type="email" required id="email">
+            <label for="nasc">Data de nascimento</label>
+            <input class="box" type="date" required id="nasc">
+          </form>
+          <div class="donate-title">
+            <h2>Valor para a doação:</h2>
+            <div class="value">
+              <button type="button" class="minus-button" onclick="minusBtnFunc()"><i class="fa-solid fa-minus"></i></button>
+              <p class="text-value"><span class="donate-value">10</span> reais</p>
+              <button type="button" class="plus-button"><i class="fa-solid fa-plus" onclick="plusBtnFunc()"></i></button>
+            </div>
+            <div>
+              <button id="first" class="blue-btn" onclick="firstFormFunction()">Ir para o pagamento</button>
+
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Segundo passo -->
+    <section class="db-section closed" id="second-section">
+      <div class="img-container">
+        <div class="image">
+          <img src="/Assets/img/Tropheus.png " alt=" Peixe ciclídeo africano">
+        </div>
+        <div class="container">
+          <form class="donate-form">
+            <h1 class="title">Sua doação irá mudar vidas! <span>Passo 2 de 2</span></h1>
+            <label for="card-number">Número do Cartão *</label>
+            <input class="box" type="text" id="card-number">
+            <label for="name-titular">Nome do Titular *</label>
+            <input class="box" type="name" id="name-titular">
+            <div class="form-box">
+              <div>
+                <label for="venc">Vencimento(mm/yy)</label>
+                <input class="box" type="text" id="venc">
+              </div>
+              <div>
+                <label for="cvv"> Cvv(###) </label>
+                <input class="box" type="text" id="cvv">
+              </div>
+            </div>
+          </form>
+
+          <div class="donate-title">
+            <h2>Valor para a doação:</h2>
+            <div class="value">
+
+              <p class="text-value"><span class="donate-value">10</span> reais</p>
+            </div>
+            <div>
+
+              <button id="second" class="blue-btn " onclick="secondFormFunction()">Concluir pagamento</button>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!--Terceiro passo -->
+    <section class="db-section closed" id="third-step">
+      <div class="img-container">
+        <img src="/Assets/img/baiacu.jpg" alt="">
+      </div>
+      <div>
+        <p class="text-payment">Pagamento feito com sucesso.</p>
+        <p class="text-payment">+<span id="number-fish">1</span> peixes felizes no rio!</p>
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-container">
+      <img src="/Assets/img/logo-footer.svg" alt="logo">
+      <div class="contact">
+        <i class="fa-solid fa-phone"></i>
+        <p>(11)8888-8888</p>
+
+        <i class="fa-solid fa-envelope"></i>
+        <p>dbaqua@reylis.com</p>
+
+        <i class="fa-solid fa-map"></i>
+        <p>rua do valão,666 - Buraco/Cotia-SP</p>
+      </div>
+      <div class="social-media">
+        <h5 class="follow">follow us</h5>
+        <div>
+          <button class="footer-icon"><i class="fa-brands fa-twitter"></i></button>
+          <button class="footer-icon"><i class="fa-brands fa-square-facebook"></i></button>
+          <button class="footer-icon"><i class="fa-brands fa-instagram"></i></i></button>
+          <button class="footer-icon">
+            <i class="fa-brands fa-square-google-plus"></i></button>
+        </div>
+      </div>
+    </div>
+    <p> Copyrigh&copy; 2022 - Danayan ltda.</p>
+  </footer>
+</body>
+
+</html>
