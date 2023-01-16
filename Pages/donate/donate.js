@@ -25,6 +25,7 @@ function plusBtnFunc() {
   price = price + 10;
   donateValue.innerHTML = `${price}`;
   donateConfirmValue.innerHTML = `${price}`;
+  paymentNumber.innerHTML = `${price / 10}`;
 }
 
 function minusBtnFunc() {
@@ -34,6 +35,7 @@ function minusBtnFunc() {
   }
   donateValue.innerHTML = `${price}`;
   donateConfirmValue.innerHTML = `${price}`;
+  paymentNumber.innerHTML = `${price / 10}`;
 }
 
 function classAdd(element) {
@@ -42,6 +44,29 @@ function classAdd(element) {
 function classRemove(element) {
   element.classList.remove("closed");
 }
+
+// firstBtn.addEventListener("click", () => {
+//   classAdd(firstForm);
+//   classAdd(plusBtn);
+//   classAdd(firstBtn);
+//   classAdd(minusBtn);
+//   classRemove(secondForm);
+//   classRemove(secondBtn);
+// });
+
+//terceiro passo
+// function forSecondStep() {
+//   donateValue.textContent / 10;
+// }
+// secondBtn.addEventListener("click", () => {
+//   const num = parseInt(donateValue.textContent);
+
+//   function div(num, a) {
+//     return num / a;
+//   }
+//   const result = div(num, 10);
+//   paymentNumber.innerHTML = `${result}`;
+// });
 
 // Validação primeiro passo
 const firstStep = document.querySelector("#first-section");
