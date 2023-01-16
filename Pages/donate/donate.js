@@ -26,14 +26,18 @@ const cvvInput = document.querySelector("#cvv");
 //  return num + a;
 
 //first step
+let price = 10;
 function plusBtnFunc() {
-  const num = parseInt(donateValue.textContent);
-  function somaNum(num, a) {
-    return num + a;
-  }
-  const result = somaNum(num, 10);
+  const result = price + 10;
   donateValue.innerHTML = `${result}`;
+
+  // const num = parseInt(donateValue.textContent);
+  // function somaNum(num, a) {
+  //   return num + a;
 }
+//   const result = somaNum(num, 10);
+//   donateValue.innerHTML = `${result}`;
+// }
 function minusBtnFunc() {
   const num = parseInt(donateValue.textContent);
   function subNum(num, a) {
