@@ -48,8 +48,5 @@ function handleAccordion(referenceBtn) {
 }
 
 //scroll
-function scrollToTop() {
-  window.scrollTo(0, 0);
 
-  return;
-}
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
