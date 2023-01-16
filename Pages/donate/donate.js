@@ -3,7 +3,7 @@ const minusBtn = document.querySelector(".minus-button");
 const plusBtn = document.querySelector(".plus-button");
 
 const donateValue = document.querySelector(".donate-value");
-
+const donateConfirmValue = document.querySelector(".donate-value-confirm");
 const paymentNumber = document.querySelector("#number-fish");
 
 const firstFormInput = document.querySelector("#first-form-input");
@@ -19,44 +19,22 @@ const titularInput = document.querySelector("#name-titular");
 const vencDateInput = document.querySelector("#venc");
 const cvvInput = document.querySelector("#cvv");
 
-// const pContent = donateValue.textContent;
-// const num = parseInt(pContent);
-
-//function somaNum(num, a) {
-//  return num + a;
-
 //first step
 let price = 10;
 function plusBtnFunc() {
   price = price + 10;
   donateValue.innerHTML = `${price}`;
+  donateConfirmValue.innerHTML = `${price}`;
 }
-// const num = parseInt(donateValue.textContent);
-// function somaNum(num, a) {
-//   return num + a;
 
-//   const result = somaNum(num, 10);
-//   donateValue.innerHTML = `${result}`;
-// }
 function minusBtnFunc() {
   price = price - 10;
   if (price <= 10) {
     price = 10;
   }
   donateValue.innerHTML = `${price}`;
+  donateConfirmValue.innerHTML = `${price}`;
 }
-
-// tentativa;
-// function consulteClass(element) {
-//   if (!element.classList.contains(".closed")) {
-//     element.classList.add("closed");
-//     return;
-//   }
-//   if (element.classList.contains(".closed")) {
-//     element.classList.remove("closed");
-//     return;
-//   }
-// }
 
 function classAdd(element) {
   element.classList.add("closed");
@@ -64,29 +42,6 @@ function classAdd(element) {
 function classRemove(element) {
   element.classList.remove("closed");
 }
-
-// firstBtn.addEventListener("click", () => {
-//   classAdd(firstForm);
-//   classAdd(plusBtn);
-//   classAdd(firstBtn);
-//   classAdd(minusBtn);
-//   classRemove(secondForm);
-//   classRemove(secondBtn);
-// });
-
-//terceiro passo
-// function forSecondStep() {
-//   donateValue.textContent / 10;
-// }
-// secondBtn.addEventListener("click", () => {
-//   const num = parseInt(donateValue.textContent);
-
-//   function div(num, a) {
-//     return num / a;
-//   }
-//   const result = div(num, 10);
-//   paymentNumber.innerHTML = `${result}`;
-// });
 
 // Validação primeiro passo
 const firstStep = document.querySelector("#first-section");
