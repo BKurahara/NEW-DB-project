@@ -1,13 +1,8 @@
 //Elementos
-const minusBtn = document.querySelector(".minus-button");
-const plusBtn = document.querySelector(".plus-button");
-
 const donateValue = document.querySelector(".donate-value");
 const donateConfirmValue = document.querySelector(".donate-value-confirm");
 const paymentNumber = document.querySelector("#number-fish");
 
-const firstFormInput = document.querySelector("#first-form-input");
-const secondFormInput = document.querySelector("#second-form-input");
 //primeiro
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -21,165 +16,127 @@ const cvvInput = document.querySelector("#cvv");
 
 //first step
 let price = 10;
-function plusBtnFunc() {
-  price = price + 10;
-  donateValue.innerHTML = `${price}`;
-  donateConfirmValue.innerHTML = `${price}`;
-  paymentNumber.innerHTML = `${price / 10}`;
-}
+function priceChangeHandler(type) {
+  // 1) Altera o Price de acordo com Type
+  if (type === "add") price += 10;
 
-function minusBtnFunc() {
-  price = price - 10;
-  if (price <= 10) {
-    price = 10;
+  if (type === "less") {
+    price -= 10;
+    if (price <= 10) price = 10;
   }
-  donateValue.innerHTML = `${price}`;
-  donateConfirmValue.innerHTML = `${price}`;
-  paymentNumber.innerHTML = `${price / 10}`;
+  // 2) Depois escreve o valor
+  donateValue.innerHTML = price;
+  donateConfirmValue.innerHTML = price;
+  paymentNumber.innerHTML = price / 10;
 }
-
-function classAdd(element) {
-  element.classList.add("closed");
-}
-function classRemove(element) {
-  element.classList.remove("closed");
-}
-
-// firstBtn.addEventListener("click", () => {
-//   classAdd(firstForm);
-//   classAdd(plusBtn);
-//   classAdd(firstBtn);
-//   classAdd(minusBtn);
-//   classRemove(secondForm);
-//   classRemove(secondBtn);
-// });
-
-//terceiro passo
-// function forSecondStep() {
-//   donateValue.textContent / 10;
-// }
-// secondBtn.addEventListener("click", () => {
-//   const num = parseInt(donateValue.textContent);
-
-//   function div(num, a) {
-//     return num / a;
-//   }
-//   const result = div(num, 10);
-//   paymentNumber.innerHTML = `${result}`;
-// });
 
 // Validação primeiro passo
 const firstStep = document.querySelector("#first-section");
 const secondStep = document.querySelector("#second-section");
 const thirdStep = document.querySelector("#third-step");
 
+//--------------------------
+function classAdd(element) {
+  element.classList.add("closed");
+}
+function classRemove(element) {
+  element.classList.remove("closed");
+}
+function nextPage1() {
+  classAdd(firstStep);
+  classRemove(secondStep);
+}
+function nextPage2() {
+  classAdd(secondStep);
+  classRemove(thirdStep);
+}
+//-------------------
+const validators = {
+  isValidEmail: (email) =>
+    new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-z]{2,}$/).test(email),
+  isValidDate: (date) =>
+    new Date().getFullYear() - new Date(dateInput).getFullYear() > 18,
+  isValidName: (name) => new RegExp(/^([a-zA-Z]+\s)+[a-zA-Z]+$/).test(name),
+  isValidCardNumber: (cardNumber) => new RegExp(/^[0-9]{16}$/).test(cardNumber),
+  isValidCardDate: (vencDate) =>
+    new RegExp(/^[0-1]{1,}[0-2]{1,}\/[2-3]{1,}[0-9]{1,}$/).test(vencDate),
+  isValidCvv: (cvvI) => new RegExp(/^[0-9]{3}$/).test(cvvI),
+};
+
+//------------------------
 function firstFormFunction() {
   // verifica nome vazio
-  if (nameInput.value === "" || !nameValidation(nameInput.value)) {
-    alert("Por favor, insira o seu nome");
+  if (nameInput.value === "") {
+    alert("Por favor, insira o seu nome.");
+    return;
+  }
+  if (!validators.isValidName(nameInput.value)) {
+    alert("Por favor, insira o seu nome completo.");
     return;
   }
   // Email
-  if (emailInput.value === "" || !emailValidation(emailInput.value)) {
+  if (emailInput.value === "") {
     alert("Por favor, insira o seu email.");
+    return;
+  }
+  if (!validators.isValidEmail(emailInput.value)) {
+    alert("Por favor, insira um meail válido ");
     return;
   }
 
   // Data de nascimento
-  if (nascInput.value === "" || !yearsValidation(nascInput.value)) {
+  if (nascInput.value === "") {
     alert("Insira uma data válida.");
+    return;
+  }
+  if (!validators.isValidDate(nascInput.value)) {
+    alert("Você não é maior de 18 anos.");
     return;
   }
   nextPage1();
 }
 
-function nextPage1() {
-  classAdd(firstStep);
-  classRemove(secondStep);
-}
-
-function emailValidation(email) {
-  const emailRegex = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-z]{2,}$/);
-  if (emailRegex.test(email)) {
-    return true;
-  }
-  return false;
-}
-
-function yearsValidation(dateInput) {
-  const yearNow = new Date();
-  const yearDeclarated = new Date(dateInput);
-  const age = yearNow.getFullYear() - yearDeclarated.getFullYear();
-  if (age < 18) {
-    return false;
-  }
-  return true;
-}
-
-function nameValidation(name) {
-  const letters = new RegExp(/^([a-zA-Z]+\s)+[a-zA-Z]+$/);
-  if (letters.test(name)) {
-    return true;
-  }
-  return false;
-}
-
 // Validação psegundo passo
 function secondFormFunction() {
   //Verificar o número do cartão
-  if (
-    cardNumberInput.value === "" ||
-    !cardNumberValidation(cardNumberInput.value)
-  ) {
+  if (cardNumberInput.value === "") {
+    alert("Insira um número de cartão.");
+    return;
+  }
+
+  if (!validators.isValidCardNumber(cardNumberInput.value)) {
     alert("Insira um número de cartão válido.");
     return;
   }
 
   // verifica nome vazio
-  if (titularInput.value === "" || !nameValidation(titularInput.value)) {
+  if (titularInput.value === "") {
+    alert("Por favor, insira o nome do titular do cartão.");
+    return;
+  }
+  if (!validators.isValidName(titularInput.value)) {
     alert("Por favor, insira o nome do titular do cartão.");
     return;
   }
 
   // Data de vencimento
-  if (vencDateInput.value === "" || !cardDateValidation(vencDateInput.value)) {
-    alert("Insira uma data válida.");
+  if (vencDateInput.value === "") {
+    alert("Insira uma data.");
+    return;
+  }
+  if (!validators.isValidCardDate(vencDateInput.value)) {
+    alert("Insira a data correta de vencimento do cartão.");
     return;
   }
 
   //CVV
-  if (cvvInput.value === "" || !cvvNumberValidation(cvvInput.value)) {
-    alert("CVV inválido.");
+  if (cvvInput.value === "") {
+    alert("Insira um CVV.");
+    return;
+  }
+  if (!validators.isValidCvv(cvvInput.value)) {
+    alert("Este CVV está inválido.");
     return;
   }
   nextPage2();
-}
-
-function cardNumberValidation(cardNumber) {
-  const number = new RegExp(/^[0-9]{16}$/);
-  if (number.test(cardNumber)) {
-    return true;
-  }
-  return false;
-}
-
-function nextPage2() {
-  classAdd(secondStep);
-  classRemove(thirdStep);
-}
-
-function cardDateValidation(vencDate) {
-  const date = new RegExp(/^[0-1]{1,}[0-2]{1,}\/[2-3]{1,}[0-9]{1,}$/);
-  if (date.test(vencDate)) {
-    return true;
-  }
-  return false;
-}
-
-function cvvNumberValidation(cvvI) {
-  const cvv = new RegExp(/^[0-9]{3}$/);
-  if (cvv.test(cvvI)) {
-    return true;
-  }
-  return false;
 }

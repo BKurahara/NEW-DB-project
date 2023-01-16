@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/styles/generic/reset.css">
 
   <!-- Elements -->
-  <link rel="stylesheet" href="/styles/Elements/buttons.css">
+  <link rel="stylesheet" href="/styles/elements/buttons.css">
   <!-- Components -->
   <link rel="stylesheet" href="/styles/components/header.css">
   <link rel="stylesheet" href="/styles/components/db-section.css">
@@ -73,9 +73,9 @@
           <div class="donate-title">
             <h2>Valor para a doação:</h2>
             <div class="value">
-              <button type="button" class="minus-button" onclick="minusBtnFunc()"><i class="fa-solid fa-minus"></i></button>
+              <button type="button" class="minus-button" onclick="priceChangeHandler('less')"><i class="fa-solid fa-minus"></i></button>
               <p class="text-value"><span class="donate-value">10</span> reais</p>
-              <button type="button" class="plus-button" onclick="plusBtnFunc()"><i class="fa-solid fa-plus"></i></button>
+              <button type="button" class="plus-button" onclick="priceChangeHandler('add')"><i class="fa-solid fa-plus"></i></button>
             </div>
             <div>
               <button id="first" class="blue-btn" onclick="firstFormFunction()">Ir para o pagamento</button>

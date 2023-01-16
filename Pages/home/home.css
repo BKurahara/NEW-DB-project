@@ -47,20 +47,20 @@
 }
 .db-section > article > .db-cards-container {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 .db-section > article > .db-cards-container > .db-card {
   background-color: var(--color-primary-light);
-  width: 200px;
+  width: 350px;
   border-radius: 15px;
   margin: 1rem 0;
 }
 .db-section > article > .db-cards-container > .db-card > img {
   width: 100%;
   object-fit: cover;
-  height: 150px;
+  height: 250px;
   border-radius: 15px 15px 0 0;
 }
 .db-section > article > .db-cards-container > .db-card > h3 {
@@ -117,7 +117,7 @@
 
 @media (max-width: 800px) {
   .db-section > article > .db-cards-container > .db-card {
-    width: 150px;
+    width: 550px;
   }
   .db-section > article > .image-contender {
     flex-wrap: wrap;
