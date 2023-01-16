@@ -64,6 +64,7 @@ const validators = {
 };
 
 //------------------------
+
 function firstFormFunction() {
   // verifica nome vazio
   if (nameInput.value === "") {
