@@ -28,26 +28,22 @@ const cvvInput = document.querySelector("#cvv");
 //first step
 let price = 10;
 function plusBtnFunc() {
-  const result = price + 10;
-  donateValue.innerHTML = `${result}`;
-
-  // const num = parseInt(donateValue.textContent);
-  // function somaNum(num, a) {
-  //   return num + a;
+  price = price + 10;
+  donateValue.innerHTML = `${price}`;
 }
+// const num = parseInt(donateValue.textContent);
+// function somaNum(num, a) {
+//   return num + a;
+
 //   const result = somaNum(num, 10);
 //   donateValue.innerHTML = `${result}`;
 // }
 function minusBtnFunc() {
-  const num = parseInt(donateValue.textContent);
-  function subNum(num, a) {
-    return num - a;
+  price = price - 10;
+  if (price <= 10) {
+    price = 10;
   }
-  if (num <= 10) {
-    return;
-  }
-  const result = subNum(num, 10);
-  donateValue.innerHTML = `${result}`;
+  donateValue.innerHTML = `${price}`;
 }
 
 // tentativa;
