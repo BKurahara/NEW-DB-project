@@ -2,18 +2,6 @@ const accordion0 = document.querySelector("#container0");
 const accordion1 = document.querySelector("#container1");
 const accordion2 = document.querySelector("#container2");
 
-// Elementos
-// const accordionBtn0 = document.querySelector("#accordionBtn0");
-// const accordionBtn1 = document.querySelector("#accordionBtn1");
-// const accordionBtn2 = document.querySelector("#accordionBtn2");
-
-// accordionBtn0.addEventListener("click", () => handleAccordion(accordionBuy));
-// accordionBtn1.addEventListener("click", () =>
-//   handleAccordion(accordionQuarentine)
-// );
-// accordionBtn2.addEventListener("click", () =>
-//   handleAccordion(accordionAclimatation)
-// );
 
 const accordions = [accordion0, accordion1, accordion2];
 

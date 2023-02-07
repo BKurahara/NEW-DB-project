@@ -55,7 +55,7 @@ const validators = {
   isValidEmail: (email) =>
     new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-z]{2,}$/).test(email),
   isValidDate: (date) =>
-    new Date().getFullYear() - new Date(dateInput).getFullYear() > 18,
+    new Date().getFullYear() - new Date(nascInput).getFullYear() > 18,
   isValidName: (name) => new RegExp(/^([a-zA-Z]+\s)+[a-zA-Z]+$/).test(name),
   isValidCardNumber: (cardNumber) => new RegExp(/^[0-9]{16}$/).test(cardNumber),
   isValidCardDate: (vencDate) =>
@@ -90,7 +90,7 @@ function firstFormFunction() {
     alert("Insira uma data válida.");
     return;
   }
-  if (!validators.isValidDate(nascInput.value)) {
+  if (validators.isValidDate(nascInput.value)) {
     alert("Você não é maior de 18 anos.");
     return;
   }
